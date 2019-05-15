@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 class Contact extends Component {
   render() {
     const { name, email, phone } = this.props;
-    
+
     return (
       <div>
         <h3>{name}</h3>
