@@ -7,12 +7,14 @@ class Contact extends Component {
     const { name, email, phone } = this.props;
 
     return (
-      <div>
+      <div className="card card-body mb-3">
         <h3>{name}</h3>
-        <li>Phone: {phone} </li>
-        <li>Email: {email}</li>
-      </div>
-    )
+          <ul className="list-group">
+            <li className="list-group-item">Phone: {phone} </li>
+            <li className="list-group-item">Email: {email}</li>
+          </ul>
+        </div>
+    );
   }
 }
 
