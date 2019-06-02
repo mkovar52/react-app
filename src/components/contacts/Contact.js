@@ -17,8 +17,6 @@ class Contact extends Component {
     //dispatch went by itself here before simulating db requests
   };
 
-  // add patch request to edit below
-
   render() {
     const { id, name, email, phone } = this.props.contact;
     const { showContactInfo } = this.state;
@@ -41,12 +39,22 @@ class Contact extends Component {
                   className="fas fa-sort-down"
                   style={{ cursor: "pointer" }}
                 />
-
                 <i
                   className="fas fa-times"
                   style={{ cursor: "pointer", float: "right", color: "red" }}
                   onClick={this.onDeleteClick.bind(this, id, dispatch)}
                 />
+                <Link to={`contact/edit/${id}`}>
+                  <i
+                    className="fas fa-edit"
+                    style={{
+                      cursor: "pointer",
+                      float: "right",
+                      color: "black",
+                      marginRight: "1rem"
+                    }}
+                  />
+                </Link>
               </h3>
               <div />
               {showContactInfo ? (
@@ -56,9 +64,6 @@ class Contact extends Component {
                     <li className="list-group-item">Email: {email}</li>
                     <li className="btn btn-block">
                       <Link to="/contact/profile">FULL PROFILE</Link>
-                    </li>
-                    <li className="btn">
-                      <i className="fas fa-edit" />
                     </li>
                   </ul>
                 </div>
