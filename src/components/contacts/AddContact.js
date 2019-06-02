@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Consumer } from "../../context";
 import TextInputGroup from "../layout/TextInputGroup";
 import uuid from "uuid";
+import { Link } from "react-router-dom";
 
 class AddContact extends Component {
   state = {
@@ -52,6 +53,9 @@ class AddContact extends Component {
       phone: "",
       errors: {}
     });
+
+    // redirect to homepage after submission
+    this.props.history.push("/");
   };
 
   render() {
@@ -96,6 +100,12 @@ class AddContact extends Component {
                     value="Submit"
                     className="btn btn-block btn-dark"
                   />
+                  <button
+                    className="btn btn-block btn-danger"
+                    style={{ color: "white" }}
+                  >
+                    <Link to="/">CANCEL</Link>
+                  </button>
                 </form>
               </div>
             </div>
