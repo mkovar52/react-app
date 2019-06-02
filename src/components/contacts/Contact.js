@@ -23,7 +23,7 @@ class Contact extends Component {
             <div className="card card-body mb-3">
               <h3>
                 {name}
-                {""}
+                {"  "}
                 <i
                   onClick={() =>
                     this.setState({
